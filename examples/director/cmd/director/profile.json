@@ -1,0 +1,15 @@
+{
+  "name": "1v1",
+  "pools": [
+    {
+      "name": "Everyone",
+      "float_range_filters": [
+        {
+          "attribute": "mode.demo",
+          "min": -100,
+          "max": 100
+        }
+      ]
+    }
+  ]
+}

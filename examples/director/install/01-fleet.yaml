@@ -1,0 +1,21 @@
+apiVersion: "stable.agones.dev/v1alpha1"
+kind: Fleet
+metadata:
+  name: fps-sample-server
+spec:
+  replicas: 2
+  strategy:
+    type: Recreate
+  template:
+    spec:
+      ports:
+        - name: default
+          containerPort: 7913
+      health:
+        initialDelaySeconds: 30
+        periodSeconds: 60
+      template:
+        spec:
+          containers:
+            - name: fps-sample-server
+              image: zhany/fps-sample-server-new
